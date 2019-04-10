@@ -1,0 +1,8 @@
+version: "3.0"
+
+services:
+  frontend:
+    container_name: jurgen123
+    build: .
+    ports:
+      - "8080:80"
