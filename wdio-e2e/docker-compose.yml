@@ -25,3 +25,4 @@ services:
     command: npm test
     volumes:
       - ./errorShots:/usr/src/app/errorShots
+      - /var/run/docker.sock:/var/run/docker.sock
