@@ -7,6 +7,7 @@ https://jira.sanomalearning.com/browse/BLS-3237
 
 > docker-compose build => build images to run the test
 > docker-compose up --exit-code-from wdio => run the test based on a angular frontend and webdriverio testframework
-> docker-compose down => remove all docker containers
+> docker-compose down => stop all docker containers
+> docker rm \$(docker ps -a -q) => kill al stopped containers
 
 The "--exit-code-from" flag here is the special trick. It will cause Docker Compose to start all of the containers, but when the command from image wdio finishes it will then shut everything down again.
