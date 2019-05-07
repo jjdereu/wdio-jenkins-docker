@@ -1,17 +1,19 @@
-pipeline{
-    agent {
-        dockerfile true
+pipeline {
+  agent {
+    docker {
+      image 'node:10.8.0'
     }
-    stages {
-        stage('Build') {
-            steps{
-                sh 'npm run build'
-            }
-        }
-        stage('Test') {
-            steps{
-                sh 'npm run test'
-            }
-        }
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'npm install'
+      }
     }
+    stage('Test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+  }
 }
