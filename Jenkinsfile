@@ -1,22 +1,9 @@
 pipeline {
-    agent { label 'docker' docker 'dockerBin' }
+    agent {
+        docker 'node'
+    }
     stages {
-        stage('Back-end') {
-            agent {
-                docker { 
-                  image 'maven:3-alpine'
-                }
-            }
-            steps {
-                sh 'mvn --version'
-            }
-        }
-        stage('Front-end') {
-            agent {
-                docker { 
-                  image 'node:7-alpine' 
-                }
-            }
+        stage("testing 123") {
             steps {
                 sh 'node --version'
             }
