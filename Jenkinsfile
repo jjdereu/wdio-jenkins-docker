@@ -1,5 +1,8 @@
 pipeline {
-    agent { label 'docker' }
+    agent any
+    tools {
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'dockerApps'
+    }
     stages {
         stage('Back-end') {
             agent {
